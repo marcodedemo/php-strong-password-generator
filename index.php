@@ -1,18 +1,3 @@
-
-<?php
-
-
-    $passwordLength = $_GET['PasswordLength'];
-
-    
-    include './partials/functions.php';
-
-
-
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -35,9 +20,19 @@
         padding-top: 100px;
     }
 
-    #password{
-        margin-top: 20px;
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
     }
+
+    label{
+        font-size: 2em;
+        font-weight: bold;
+    }
+
 
 </style>
 
@@ -47,23 +42,17 @@
 
         
         <!-- form -->
-        <form action="index.php" method="get">
+        <form action="redirect.php" method="get">
             
-            <label for="length">Lunghezza Password:</label> <br>
-            <input id="length" type="range" min="4" max="12" value="4" name="PasswordLength"> <br>
+            <label for="length">Lunghezza Password:</label>
+            <input id="length" type="range" min="4" max="16" value="4" name="PasswordLength">
             
             <input type="submit">
             
         </form>
         
         
-        <!-- password container -->
-        <div id="password">
-            
-            <strong>Password:</strong>
-            <span><?php echo createPassword($passwordLength) ?></span>
-            
-        </div>
+
         
     </div>
 

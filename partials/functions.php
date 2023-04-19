@@ -2,6 +2,8 @@
 <?php 
 
 
+    
+
 
     // funzione che crea una password randomica
     function createPassword($length){
